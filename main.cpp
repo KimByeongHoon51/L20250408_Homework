@@ -6,12 +6,12 @@
 using namespace std;
 
 int Lotto[Number] = { 0, };
-int Number1;
-int Number2;
-int Number3;
-int Number4;
-int Number5;
-int Number6;
+int Number1 = 0;
+int Number2 = 0;
+int Number3 = 0;
+int Number4 = 0;
+int Number5 = 0;
+int Number6 = 0;
 
 void Initialize()
 {
@@ -54,6 +54,12 @@ void Input()
 	cout << endl;
 }
 
+void Print()
+{
+	cout << "This week's lottery numbers are : ";
+	cout << Lotto[0] << " " << Lotto[1] << " " << Lotto[2] << " " << Lotto[3] << " " << Lotto[4] << " " << Lotto[5] << endl;
+}
+
 void Check()
 {
 	if (Number1 == Lotto[0] || Number1 == Lotto[1] || Number1 == Lotto[2] || Number1 == Lotto[3] || Number1 == Lotto[4] || Number1 == Lotto[5])
@@ -77,19 +83,13 @@ void Check()
 	}
 }
 
-void Print()
-{
-	cout << "This week's lottery numbers are : ";
-	cout << Lotto[0] << " " << Lotto[1] << " " << Lotto[2] << " " << Lotto[3] << " " << Lotto[4] << " " << Lotto[5] << endl;
-}
-
 int main() 
 {
 	Initialize();
 	Shuffle();
 	Input();
-	Check();
 	Print();
+	Check();
 
 	return 0;
 }
