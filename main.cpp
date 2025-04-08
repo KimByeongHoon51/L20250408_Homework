@@ -2,6 +2,7 @@
 #include <algorithm>
 
 #define Number		45
+#define Shuffle_Count		1000
 
 using namespace std;
 
@@ -26,7 +27,7 @@ void Initialize()
 void Shuffle()
 {
 	int Temp = 0;
-	for (int Count = 0; Count < Number * 1000; Count++)
+	for (int Count = 0; Count < Number * Shuffle_Count; Count++)
 	{
 		int First = rand() % Number; // 0~44
 		int Second = rand() % Number; // 0~44
@@ -57,7 +58,10 @@ void Input()
 void Print()
 {
 	cout << "This week's lottery numbers are : ";
-	cout << Lotto[0] << " " << Lotto[1] << " " << Lotto[2] << " " << Lotto[3] << " " << Lotto[4] << " " << Lotto[5] << endl;
+	for (int i = 0; i < 6; ++i)
+	{
+		cout << Lotto[i] << " ";
+	}
 }
 
 void Check()
@@ -68,13 +72,17 @@ void Check()
 		{
 			if (Number3 == Lotto[0] || Number3 == Lotto[1] || Number3 == Lotto[2] || Number3 == Lotto[3] || Number3 == Lotto[4] || Number3 == Lotto[5])
 			{
+				cout << "3 numbers are correct." << endl;
 				if (Number4 == Lotto[0] || Number4 == Lotto[1] || Number4 == Lotto[2] || Number4 == Lotto[3] || Number4 == Lotto[4] || Number4 == Lotto[5])
 				{
+					cout << "4 numbers are correct." << endl;
 					if (Number5 == Lotto[0] || Number5 == Lotto[1] || Number5 == Lotto[2] || Number5 == Lotto[3] || Number5 == Lotto[4] || Number5 == Lotto[5])
 					{
+						cout << "5 numbers are correct." << endl;
 						if (Number6 == Lotto[0] || Number6 == Lotto[1] || Number6 == Lotto[2] || Number6 == Lotto[3] || Number6 == Lotto[4] || Number6 == Lotto[5])
 						{
-							"You won the lottery!";
+							cout << "6 numbers are correct." << endl;
+							cout << "You won the lottery!" << endl;
 						}
 					}
 				}
